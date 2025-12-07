@@ -77,6 +77,7 @@ Autism Early Detector (AED) adalah aplikasi web untuk melakukan skrining dini in
 ├─ index.php        # Halaman utama / login
 ├─ README.md
 └─ .gitignore
+```
 
 📦 Persyaratan Sistem
 
