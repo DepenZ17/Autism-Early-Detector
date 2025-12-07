@@ -1,0 +1,166 @@
+/* Custom CSS untuk login.php dan forgot_pass.php */
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Mencegah scroll pada layout 2 kolom full height */
+}
+
+.full-height {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  background-color: #20c997; /* Warna background dari Desktop - 2.png */
+  color: white; /* Default text color for the right side */
+}
+
+.login-form-section {
+  background-color: #3ce0af; /* <--- Warna Baru: Diubah dari putih ke #3CE0AF */
+  color: #333; /* Warna teks untuk form login (akan diubah ke putih di bawah) */
+  padding: 50px;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1); /* Shadow di sisi kanan form */
+  border-top-right-radius: 60px; /* Sudut melengkung di kanan atas */
+  border-bottom-right-radius: 60px; /* Sudut melengkung di kanan bawah */
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+/* Menyesuaikan warna teks di dalam login-form-section agar terlihat di background baru */
+.login-form-section h2 {
+  font-weight: bold;
+  font-size: 2.5em;
+  color: white; /* <--- Diubah: Teks "Welcome Back!" atau "Lupa Kata Sandi?" menjadi putih */
+}
+
+.login-form-section p.text-secondary {
+  /* Untuk paragraf deskripsi di forgot_pass.php */
+  color: white !important; /* <--- Diubah: Teks deskripsi menjadi putih */
+}
+
+.login-form .form-control {
+  border-radius: 25px; /* Input field bulat */
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+}
+
+.login-form .form-control:focus {
+  border-color: #a06ee0; /* Warna border saat fokus */
+  box-shadow: 0 0 0 0.25rem rgba(160, 110, 224, 0.25); /* Efek shadow saat fokus */
+}
+
+/* --- Perubahan Warna Tulisan untuk forgot_pass.php --- */
+/* Targetkan teks di bagian background hijau */
+/* Ini juga akan berlaku untuk .login-form-section karena backgroundnya sekarang sama */
+.login-container p {
+  /* Ini akan menargetkan paragraf "Masukkan email Anda..." di forgot_pass.php */
+  color: white; /* Ubah warna menjadi putih agar terlihat jelas */
+  font-size: 1.1em; /* Sedikit perbesar agar lebih terbaca */
+}
+
+.login-container .forgot-password {
+  /* Ini menargetkan link "Kembali ke Login" */
+  color: white; /* Ubah warna link menjadi putih */
+  font-weight: bold; /* Buat tebal agar lebih menonjol */
+}
+/* --- Akhir Perubahan --- */
+
+/* Warna ungu untuk Forgot Password di form login (jika digunakan) */
+.forgot-password {
+  color: white; /* <--- Diubah: Link "Forgot Password?" di login.php menjadi putih */
+  font-size: 0.9em;
+}
+
+.btn-purple {
+  background-color: #a06ee0; /* Warna ungu untuk tombol */
+  border-color: #a06ee0;
+  color: white;
+  padding: 10px 40px; /* Padding tombol */
+  border-radius: 25px; /* Tombol bulat */
+  font-weight: bold;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-purple:hover {
+  background-color: #8a5ecc; /* Warna ungu lebih gelap saat hover */
+  border-color: #8a5ecc;
+  color: white;
+}
+
+.login-illustration-section {
+  /* Background default dari .login-container sudah cukup */
+  /* Gambar ilustrasi */
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.illustration-wrapper {
+  width: 350px; /* Ukuran wrapper ilustrasi */
+  height: 350px;
+  background-color: white; /* Lingkaran putih di sekitar ilustrasi */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Shadow pada lingkaran */
+  padding: 20px; /* Padding di dalam lingkaran */
+}
+
+.login-illustration-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 767.98px) {
+  .row.no-gutters {
+    flex-direction: column; /* Tumpuk kolom di layar kecil */
+  }
+  .login-form-section,
+  .login-illustration-section {
+    flex: 0 0 100%;
+    max-width: 100%;
+    border-radius: 0; /* Hapus border-radius di mobile */
+    box-shadow: none; /* Hapus shadow di mobile */
+    padding: 30px;
+  }
+
+  .login-illustration-section {
+    order: -1; /* Pindahkan ilustrasi ke atas di mobile */
+    padding-bottom: 0;
+  }
+
+  .illustration-wrapper {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 30px; /* Beri jarak ke form di bawahnya */
+  }
+
+  .login-form-section h2 {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .login-form {
+    width: 90%;
+  }
+
+  .d-flex.justify-content-center.gap-3 {
+    flex-direction: column; /* Tombol bertumpuk di mobile */
+  }
+  .btn-purple {
+    width: 100%; /* Tombol full width di mobile */
+    margin-bottom: 10px; /* Jarak antar tombol */
+  }
+
+  /* Perbaikan responsif untuk teks di background hijau */
+  .login-container p {
+    font-size: 1em; /* Sedikit kecilkan di mobile */
+  }
+}

@@ -1,0 +1,97 @@
+/* File: css/styledash.css */
+/* Skema Warna Baru: Teal & Neutral */
+
+/* [UBAH] Warna latar belakang utama dan warna teks default */
+body {
+  background-color: #f0f8f7; /* Latar belakang off-white dengan sentuhan teal */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #34495e; /* Warna teks utama (abu-abu gelap kebiruan) */
+
+  /* Perbaikan untuk Sticky Footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Ini akan membuat area konten utama meregang */
+main {
+  flex-grow: 1;
+}
+
+/* [UBAH] Navbar tetap putih untuk kontras */
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  background-color: #ffffff !important;
+}
+
+.main-header {
+  color: #2c3e50; /* Warna header lebih gelap */
+}
+
+/* Kartu tetap putih agar menonjol */
+.menu-card {
+  border: 1px solid #e0e0e0; /* Tambahkan border tipis */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-decoration: none;
+  color: inherit;
+  background-color: #ffffff;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(32, 201, 151, 0.15); /* Bayangan dengan warna teal saat disentuh */
+  color: inherit;
+}
+
+/* Ikon menggunakan warna teal utama */
+.card-icon {
+  font-size: 3rem;
+  color: #20c997;
+}
+
+.card-title {
+  color: #34495e;
+  font-weight: 600;
+}
+
+/* [UBAH] Footer dengan warna yang serasi */
+.footer {
+  padding: 20px 0;
+  margin-top: 40px;
+  background-color: #e9ecef; /* Warna abu-abu terang */
+  color: #6c757d;
+  border-top: 1px solid #dce1e6;
+}
+
+/* [TAMBAHAN] Style untuk Accordion agar lebih serasi */
+.accordion-button {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(
+    32,
+    201,
+    151,
+    0.1
+  ); /* Latar belakang teal transparan saat terbuka */
+  color: #1a8a6a;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(32, 201, 151, 0.3); /* Fokus dengan warna teal */
+}
+
+a {
+  color: #20c997;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1a8a6a;
+  text-decoration: underline;
+}

@@ -1,0 +1,57 @@
+# =========================
+# Sistem / OS
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Editor / IDE
+# =========================
+.vscode/
+.idea/
+*.swp
+
+# =========================
+# Log files
+# =========================
+*.log
+
+# =========================
+# File konfigurasi sensitif
+# =========================
+.env
+.env.*
+*.local.php
+*.backup.php
+
+# =========================
+# PHP / Composer
+# =========================
+vendor/        # folder vendor hasil composer install
+
+# =========================
+# Python / Backend ML (diasumsikan di folder backend)
+# =========================
+backend/__pycache__/
+backend/**/*.py[cod]
+backend/*.pyc
+backend/venv/
+backend/.venv/
+backend/.env
+backend/env/
+
+# Jupyter / notebook cache (kalau ada)
+backend/.ipynb_checkpoints/
+
+# =========================
+# Upload / file runtime
+# (kalau tidak mau upload file besar ke repo)
+# =========================
+uploads/
+
+# =========================
+# Build / cache umum (kalau suatu saat ada)
+# =========================
+build/
+dist/

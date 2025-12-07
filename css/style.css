@@ -1,0 +1,228 @@
+/* ===== Base Style ===== */
+body {
+  font-family: "Segoe UI", sans-serif;
+  color: white; /* Default text color for the main body */
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Header (Top Navigation) Styles ===== */
+.main-header {
+  /* Kelas baru untuk header */
+  background-color: #3ce0af; /* <--- Warna Baru Anda */
+  padding: 15px 40px; /* Tambah padding agar lebih tebal */
+  position: relative;
+  z-index: 100;
+}
+
+/* Pastikan tombol di dalam header juga terlihat jelas dengan background baru */
+.main-header .btn-primary {
+  background-color: #007bff; /* Bisa tetap biru default Bootstrap */
+  border-color: #007bff;
+  color: white;
+}
+
+.main-header .btn-light {
+  background-color: white; /* Ubah menjadi putih solid agar lebih menonjol */
+  border-color: #dee2e6; /* Border default Bootstrap */
+  color: #333; /* Warna teks gelap agar terbaca di background putih */
+}
+
+.main-header .btn-light:hover {
+  background-color: #e2e6ea; /* Sedikit lebih gelap saat hover */
+  border-color: #dae0e5;
+  color: #333;
+}
+
+/* ===== Hero Section Styles ===== */
+.hero {
+  background-color: #20c997; /* Warna teal solid seperti contoh */
+}
+
+.hero .container {
+  padding-top: 100px; /* Diperbesar: Sesuaikan jarak atas jika perlu */
+  padding-bottom: 100px; /* Diperbesar: Sesuaikan jarak bawah jika perlu */
+}
+
+.hero-content h4 {
+  font-size: 3.2em; /* Diperbesar: Ukuran font lebih besar untuk hero */
+  font-weight: 700;
+  line-height: 1.3;
+  color: white;
+  margin-bottom: 30px; /* Diperbesar: Memberi sedikit lebih banyak ruang */
+}
+
+.hero-btn {
+  background: #fd7e14; /* Warna orange/coral seperti contoh */
+  border: none;
+  padding: 15px 35px; /* Diperbesar: Padding tombol lebih besar */
+  border-radius: 8px; /* Diperbesar: Sudut lebih bulat */
+  font-weight: bold;
+  color: white;
+  font-size: 1.2em; /* Diperbesar: Ukuran font tombol lebih besar */
+  text-align: center;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.hero-btn:hover {
+  background: #e06c0b;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Gambar dalam lingkaran putih di Hero Section */
+.image-wrapper-hero {
+  background-color: white;
+  border-radius: 50%;
+  padding: 25px; /* Diperbesar: Padding di dalam lingkaran putih */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Diperbesar: Shadow lebih menonjol */
+  width: 400px; /* Diperbesar: Ukuran lingkaran putih */
+  height: 400px; /* Diperbesar: Ukuran lingkaran putih */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 60px; /* Diperbesar: Tambahkan margin agar tidak terlalu mepet ke kanan */
+}
+
+.rounded-image-hero {
+  max-width: 100%; /* Gambar mengisi seluruh wrapper */
+  height: auto;
+  display: block;
+}
+
+/* ===== Button Style (Umum) ===== */
+.icon-button {
+  border-radius: 25px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+/* Karena .btn-light sudah diatur di .main-header .btn-light, 
+   ini mungkin tidak lagi diperlukan kecuali untuk tombol di luar header.
+   Jika hanya untuk header, Anda bisa menghapusnya. */
+/* .icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+} */
+
+/* ===== Section Layout ===== */
+.full-height {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section-content {
+  background-color: white;
+  color: black; /* Override body color for this section */
+  padding: 60px 0;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05); /* Shadow di bagian atas */
+}
+
+/* Garis luar konten */
+.content-box {
+  border: 2px solid #e0e0e0;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Image Style (untuk section-content) ===== */
+.rounded-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ===== Heading & Paragraph (Bagian Informasi Autisme) ===== */
+.section-content h2 {
+  font-weight: bold;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.section-content h4 {
+  color: #222;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.section-content p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* ===== Media Queries ===== */
+@media (max-width: 991.98px) {
+  /* Tablet dan di bawah */
+  .hero .container .row {
+    flex-direction: column; /* Tumpuk konten hero */
+    text-align: center;
+  }
+  .hero-content {
+    align-items: center !important; /* Tengahkan teks dan tombol */
+    text-align: center;
+    margin-bottom: 40px; /* Beri jarak antara teks/tombol dan gambar */
+  }
+  .hero-content h4 {
+    font-size: 2.5em; /* Kecilkan font di tablet, tapi tetap lebih besar */
+  }
+  .hero .col-md-6:last-child {
+    justify-content: center !important; /* Tengahkan gambar */
+    margin-right: 0; /* Reset margin kanan */
+    padding-bottom: 40px; /* Tambahkan padding bawah */
+  }
+  .image-wrapper-hero {
+    width: 300px; /* Ukuran lingkaran di tablet */
+    height: 300px;
+    padding: 20px;
+  }
+
+  /* Penyesuaian umum untuk section-content pada tablet */
+  .section-content {
+    padding: 50px 20px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Ponsel */
+  .hero-content h4 {
+    font-size: 1.8em; /* Lebih kecil lagi untuk ponsel */
+  }
+  .hero-btn {
+    width: 100%;
+    font-size: 1em; /* Font tombol */
+    padding: 12px 25px; /* Padding tombol */
+  }
+  .image-wrapper-hero {
+    width: 250px; /* Ukuran lingkaran di ponsel */
+    height: 250px;
+    padding: 15px;
+  }
+  .rounded-image-hero {
+    max-width: 90%;
+  }
+
+  /* Penyesuaian umum untuk section-content pada ponsel */
+  .section-content {
+    padding: 40px 15px;
+    border-radius: 30px;
+  }
+  .content-box {
+    padding: 20px;
+  }
+  .section-content h2 {
+    font-size: 28px;
+  }
+  .section-content h4 {
+    font-size: 20px;
+  }
+}

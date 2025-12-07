@@ -1,0 +1,210 @@
+/* General Body Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #2ed8a0, #00a389);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Main container for the two-column layout (form + illustration) */
+.main-container {
+  display: flex;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 900px;
+  width: 90%;
+  min-height: 500px;
+}
+
+/* Left Section: The Form */
+.form-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-section h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+  font-size: 0.9em;
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: calc(100% - 24px);
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 1em;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+button[type="submit"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  background-color: #6a3fd3;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(106, 63, 211, 0.3);
+}
+
+button[type="submit"]:hover {
+  background-color: #5a35b0;
+}
+
+/* Right Section: Illustration and Text */
+.illustration-section {
+  flex: 1;
+  background: linear-gradient(135deg, #00a389, #2ed8a0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  position: relative; /* PENTING: Untuk membuat konteks penumpukan bagi elemen absolut anaknya */
+  overflow: hidden; /* Untuk memastikan lingkaran tidak keluar batas illustration-section */
+}
+
+/* Container for the image and its circular background */
+.image-container {
+  position: relative; /* PENTING: Untuk membuat konteks penumpukan bagi z-index gambar */
+  z-index: 10; /* PENTING: Membuat gambar tampil di atas lingkaran */
+  display: flex; /* Untuk mengatur posisi gambar di tengah kontainer */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Memberi jarak antara gambar dan teks di bawahnya */
+  width: 200px; /* Tambahkan ini jika image-container perlu ukuran eksplisit */
+  height: 200px; /* Tambahkan ini jika image-container perlu ukuran eksplisit */
+}
+
+/* Pseudo-element for the white circular background behind the image */
+.illustration-section .image-container::before {
+  content: "";
+  display: block;
+  position: absolute; /* PENTING: Memungkinkan posisi yang tepat relatif terhadap image-container */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px; /* SESUAIKAN UKURAN INI */
+  height: 250px; /* SESUAIKAN UKURAN INI */
+  background-color: white;
+  border-radius: 50%;
+  z-index: 5; /* PENTING: Membuat lingkaran tampil di bawah gambar */
+}
+
+.illustration-section img {
+  max-width: 100%; /* Pastikan gambar menyesuaikan ukuran image-container */
+  height: auto;
+  display: block;
+  /* Jika gambar memiliki banyak spasi kosong, mungkin Anda perlu mengurangi max-widthnya dari 100%
+       atau memangkas gambar itu sendiri. */
+  z-index: 15; /* Opsional: Berikan z-index lebih tinggi dari image-container jika perlu */
+}
+
+.illustration-section h2 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.illustration-section p {
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 300px;
+}
+.login-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    max-width: 450px;
+    min-height: auto;
+  }
+  .form-section,
+  .illustration-section {
+    padding: 25px;
+  }
+  .illustration-section {
+    order: -1;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .form-section {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .illustration-section h2 {
+    font-size: 1.8em;
+  }
+  .image-container {
+    margin-bottom: 10px;
+    width: 180px; /* Sesuaikan ukuran kontainer gambar untuk mobile */
+    height: 180px;
+  }
+  .illustration-section .image-container::before {
+    width: 180px; /* Sesuaikan ukuran lingkaran untuk mobile */
+    height: 180px;
+  }
+}
