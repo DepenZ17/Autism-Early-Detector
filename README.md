@@ -37,7 +37,7 @@ Autism Early Detector (AED) adalah aplikasi web untuk melakukan skrining dini in
 - Dapat dikembangkan lebih lanjut dengan:
   - Cross-validation
   - Penanganan data tidak seimbang
-  - Explainable AI (SHAP) jika diintegrasikan.
+  - Explainable AI (SHAP)
 
 ---
 
